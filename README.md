@@ -23,7 +23,11 @@ from the `resources/requirements.txt` file.
 Please check it before running. It may not make sense for your machine.
 
 When done, you can activate your virtualenv with the usual `source
-.env/bin/activate` or your favorite virtualenv tool.
+.env/bin/activate` or your favorite virtualenv tool. The tests will not
+function outside the local virtualenv.
+
+Your app should go in the `src` folder. Run your application using the
+dev_appserver.py script as usual.
 
 Tests
 -----
