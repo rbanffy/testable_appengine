@@ -18,18 +18,13 @@ class SanityTest(unittest.TestCase):
         self.testbed.activate()
         self.testbed.init_datastore_v3_stub()
         self.testbed.init_memcache_stub()
-        self.testapp = webtest.TestApp(main.application)
 
     def tearDown(self):
         self.testbed.deactivate()
 
     def test_sanity(self):
         self.assertTrue(True)
-
-    def test_sample_request(self):
-        response = self.testapp.get('/')
-        self.assertEqual(response.status_int, 200)
-
+        
 
 class HandlerTest(unittest.TestCase):
     
