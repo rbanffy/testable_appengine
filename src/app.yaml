@@ -1,5 +1,5 @@
-application: CHANGETHIS
-version: THISTOO
+application: changethis
+version: thistoo
 runtime: python27
 api_version: 1
 threadsafe: yes
