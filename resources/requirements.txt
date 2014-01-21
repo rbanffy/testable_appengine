@@ -1,3 +1,4 @@
 ipdb
 nose
 wsgiref
+WebTest
