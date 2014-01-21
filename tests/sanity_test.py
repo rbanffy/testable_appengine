@@ -13,7 +13,7 @@ from src import main
 
 
 class SanityTest(unittest.TestCase):
-    
+
     def setUp(self):
         self.testbed = testbed.Testbed()
         self.testbed.activate()
@@ -25,10 +25,10 @@ class SanityTest(unittest.TestCase):
 
     def test_sanity(self):
         self.assertTrue(True)
-        
+
 
 class HandlerTest(unittest.TestCase):
-    
+
     def setUp(self):
         self.testapp = webtest.TestApp(main.application)
 
