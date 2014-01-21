@@ -5,10 +5,11 @@ Ensure the environment is sane
 import unittest
 import webtest
 
-from src import main
 from google.appengine.api import memcache
 from google.appengine.ext import db
 from google.appengine.ext import testbed
+
+from src import main
 
 
 class SanityTest(unittest.TestCase):
