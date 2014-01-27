@@ -9,7 +9,6 @@ class SampleIndex(webapp2.RequestHandler):
         self.response.headers['Content-Type'] = 'text/plain'
         self.response.out.write("helloworld")
 
-
 application = webapp2.WSGIApplication([
     ('/', SampleIndex),
 ], debug=DEBUG)
