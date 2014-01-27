@@ -1,6 +1,6 @@
 import webapp2
-import settings
 
+DEBUG = os.environ.get('SERVER_SOFTWARE', '').startswith('Dev')
 
 class SampleIndex(webapp2.RequestHandler):
     """Stub request handler"""
@@ -12,4 +12,4 @@ class SampleIndex(webapp2.RequestHandler):
 
 application = webapp2.WSGIApplication([
     ('/', SampleIndex),
-], debug=settings.DEBUG)
+], debug=DEBUG)
