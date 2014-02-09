@@ -38,6 +38,7 @@ nosetests.xml
 # Emacs
 *#
 .#*
+*~
 
 # The virtual environment
 .env
