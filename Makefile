@@ -24,5 +24,8 @@ paths: libraries
 virtualenv:
 	virtualenv $(CURDIR)/.env
 
+pep8:
+	find $(CURDIR)/src/ -name *.py -exec pep8 {} \;
+
 clean:
 	rm -rf $(CURDIR)/.env $(CURDIR)/build $(CURDIR)/lib
