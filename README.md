@@ -15,12 +15,13 @@ extracted from a larger project that makes use of it.
 Setting up your development environment
 ---------------------------------------
 
-There is a makefile in the root directory. Running `make` will build
-a virtualenv in the `.env` folder, download the App Engine SDK, build
-the appropriate .pth files for your machine and install all requirements
-from the `resources/requirements.txt` file.
+There is a makefile in the root directory. Running `make venv` will
+build a virtualenv in the `.env` folder, download the App Engine SDK,
+build the appropriate .pth files for your machine and install all
+requirements from the `resources/requirements.txt` file.
 
-Please check it before running. It may not make sense for your machine.
+Please check it before running make. It may not make sense for your
+machine.
 
 When done, you can activate your virtualenv with the usual `source
 .env/bin/activate` or your favorite virtualenv tool. The tests will not
