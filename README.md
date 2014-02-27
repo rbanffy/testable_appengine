@@ -18,10 +18,14 @@ Setting up your development environment
 There is a makefile in the root directory. Running `make venv` will
 build a virtualenv in the `.env` folder, download the App Engine SDK,
 build the appropriate .pth files for your machine and install all
-requirements from the `resources/requirements.txt` file.
+requirements from the `resources/requirements.txt` file. If you wish to
+use a Python environment you provide yourself, you can make the
+virtualenv youself and run `make libraries` with VENV pointing to your
+virtualenv (as in `VENV=.my_env make libraries`)
 
-Please check it before running make. It may not make sense for your
-machine.
+Please check the makefile before using it. It may not make sense for
+your environment. It was tested on both Ubuntu, Fedora and OSX, but
+that's it.
 
 When done, you can activate your virtualenv with the usual `source
 .env/bin/activate` or your favorite virtualenv tool. The tests will not

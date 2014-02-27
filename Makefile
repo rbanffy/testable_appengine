@@ -1,4 +1,4 @@
-version=1.8.9
+version=1.9.0
 
 # Override VENV if not defined
 VENV?=.env
@@ -11,7 +11,7 @@ directories:
 	mkdir -p $(CURDIR)/lib $(CURDIR)/build
 
 appenginesdk: directories
-	wget -c http://googleappengine.googlecode.com/files/google_appengine_$(version).zip -O /tmp/google_appengine_$(version).zip
+	wget -c https://commondatastorage.googleapis.com/appengine-sdks/featured/google_appengine_$(version).zip -O /tmp/google_appengine_$(version).zip
 	unzip -q -o /tmp/google_appengine_$(version).zip -d $(CURDIR)/build
 
 requirements:
