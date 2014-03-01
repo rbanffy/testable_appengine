@@ -8,14 +8,14 @@ VENV?=.env
 venv: virtualenv libraries
 
 directories:
-	mkdir -p $(CURDIR)/build
+	mkdir -p $(CURDIR)/build $(CURDIR)/cache
 
 appenginesdk: directories
-	wget -c http://commondatastorage.googleapis.com/appengine-sdks/featured/google_appengine_$(version).zip -O /tmp/google_appengine_$(version).zip
-	unzip -q -o /tmp/google_appengine_$(version).zip -d $(CURDIR)/build
+	wget -c http://commondatastorage.googleapis.com/appengine-sdks/featured/google_appengine_$(version).zip -O $(CURDIR)/cache/google_appengine_$(version).zip
+	unzip -q -o $(CURDIR)/cache/google_appengine_$(version).zip -d $(CURDIR)/build
 
 requirements:
-	$(CURDIR)/$(VENV)/bin/pip install -r $(CURDIR)/resources/requirements.txt
+	$(CURDIR)/$(VENV)/bin/pip install --download-cache $(CURDIR)/cache -r $(CURDIR)/resources/requirements.txt
 
 libraries: requirements appenginesdk
 	mv -v $(CURDIR)/build/google_appengine $(CURDIR)/$(VENV)/lib
@@ -35,7 +35,7 @@ pep8:
 	find $(CURDIR)/tests/ -name *.py -exec pep8 {} \;
 
 clean_dirs:
-	rm -rf $(CURDIR)/build
+	rm -rf $(CURDIR)/build/* $(CURDIR)/cache/*
 
 # Also avoiding the "clean" target for the reasons described at the "venv" target
 clean_venv: clean_dirs
