@@ -35,8 +35,12 @@ pep8:
 	find $(CURDIR)/tests/ -name *.py -exec pep8 {} \;
 
 clean_dirs:
-	rm -rf $(CURDIR)/build/* $(CURDIR)/cache/*
+	rm -rf $(CURDIR)/build/*
+
+clean_cache:
+	rm -rf $(CURDIR)/cache/*
 
 # Also avoiding the "clean" target for the reasons described at the "venv" target
+# Deletes the virtualenv
 clean_venv: clean_dirs
 	rm -rf $(CURDIR)/$(VENV)
