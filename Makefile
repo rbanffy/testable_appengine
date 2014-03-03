@@ -35,7 +35,7 @@ pep8:
 	find $(CURDIR)/tests/ -name *.py -exec pep8 {} \;
 
 clean_dirs:
-	rm -rf $(CURDIR)/build
+	rm -rf $(CURDIR)/build/*
 
 # Also avoiding the "clean" target for the reasons described at the "venv" target
 clean_venv: clean_dirs
