@@ -40,5 +40,8 @@ nosetests.xml
 .#*
 *~
 
-# The virtual environment
-.env
+# Egg and SDK download caches
+cache
+
+# The virtual environments
+.env*
