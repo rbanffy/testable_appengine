@@ -2,6 +2,10 @@
 Ensure the environment is sane
 """
 
+# Do not add your own tests to this file. This file is intended for the sole
+# purpose of confirming your environment was properly set-up
+
+
 import unittest
 import webtest
 
