@@ -33,10 +33,12 @@ When done, you can activate your virtualenv with the usual `source
 .env/bin/activate` or your favorite virtualenv tool. The tests will not
 function outside the local virtualenv. From the virtualenv, invoking
 dev_appserver.py and appcfg.py will use the versions in the SDK
-downloaded during install.
+downloaded during install (check the `Makefile` for current version).
 
 Your app should go in the `src` folder. Run your application using the
-dev_appserver.py script as usual.
+dev_appserver.py script from within the virtualenv, as in
+`dev_appserver.py src`. Always deploy from the `src` folder so your
+tests don't end up on the server.
 
 Tests
 -----
