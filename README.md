@@ -24,12 +24,16 @@ virtualenv youself and run `make libraries` with VENV pointing to your
 virtualenv (as in `VENV=.my_env make libraries`)
 
 Please check the makefile before using it. It may not make sense for
-your environment. It was tested on both Ubuntu, Fedora and OSX, but
-that's it.
+your environment. It was tested on both Ubuntu, Fedora and OSX (10.7+,
+provided you have functional pip and virtualenv utilities). It should
+work on Windows under [Cygwin](http://www.cygwin.com/), but it was never
+tested that way.
 
 When done, you can activate your virtualenv with the usual `source
 .env/bin/activate` or your favorite virtualenv tool. The tests will not
-function outside the local virtualenv.
+function outside the local virtualenv. From the virtualenv, invoking
+dev_appserver.py and appcfg.py will use the versions in the SDK
+downloaded during install.
 
 Your app should go in the `src` folder. Run your application using the
 dev_appserver.py script as usual.
