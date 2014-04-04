@@ -49,6 +49,6 @@ everything is sane after you set up the environment.
 Contributing
 ------------
 
-File a bug report, fork it, PEP-8 it, test it, and, if it works, send a
-pull request. When in doubt, get in touch. We'll figure out what needs
-to be done.
+File a bug report (enhancement suggestions are fine too), fork it, PEP-8
+it, test it, and, if it works, send a pull request. When in doubt, get
+in touch. We'll figure out what needs to be done.
