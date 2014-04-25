@@ -12,6 +12,9 @@ major annoyance for me and a big turn-off for the platform. With these
 in place, running tests is as trivial as running nose. This tree was
 extracted from a larger project that makes use of it.
 
+![nosetests running]
+(https://raw.github.com/wiki/rbanffy/testable_appengine/screenshot.png)
+
 Setting up your development environment
 ---------------------------------------
 
