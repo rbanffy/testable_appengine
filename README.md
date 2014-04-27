@@ -49,6 +49,19 @@ Tests
 There are tests in the tests folder. The sanity_test.py checks whether
 everything is sane after you set up the environment.
 
+Debugging
+---------
+
+Debugging works like you'd expect. You just use pdb or ipdb (ipdb seems
+to have a tendency not to work under the dev_appserver, but pdb is just
+fine). Rule is, use ipbd if you want to debug something that's called
+by a test, pdb for a live web application. Worst case scenario is that
+you just need to delete a character. You can also easily use iPython to
+explore your ideas before you commit them to code.
+
+![ipython prompt and ipdb in a test]
+(https://raw.github.com/wiki/rbanffy/testable_appengine/using_ipdb.png)
+
 Contributing
 ------------
 
