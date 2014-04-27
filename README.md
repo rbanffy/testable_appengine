@@ -27,10 +27,14 @@ virtualenv youself and run `make libraries` with VENV pointing to your
 virtualenv (as in `VENV=.my_env make libraries`)
 
 Please check the makefile before using it. It may not make sense for
-your environment. It was tested on both Ubuntu, Fedora and OSX (10.7+,
-provided you have functional pip and virtualenv utilities). It should
-work on Windows under [Cygwin](http://www.cygwin.com/), but it was never
-tested that way.
+your environment. It was tested on Ubuntu, Fedora, OSX (10.7+,
+provided you have functional pip and virtualenv utilities) and Windows
+8.1 under [Cygwin](http://www.cygwin.com/). If you are developing under
+Windows and don't use Cygwin, you are suffering more than you need for
+no good reason.
+
+![Under Windows+Cygwin]
+(https://raw.github.com/wiki/rbanffy/testable_appengine/windows.png)
 
 When done, you can activate your virtualenv with the usual `source
 .env/bin/activate` or your favorite virtualenv tool. The tests will not
