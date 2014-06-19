@@ -1,5 +1,5 @@
 """
-Ensure the environment is sane
+Ensure the fixture system works
 """
 
 # Do not add your own tests to this file. This file is intended for the sole
@@ -13,34 +13,32 @@ from google.appengine.api import memcache
 from google.appengine.ext import db
 from google.appengine.ext import testbed
 
-from tools import load_fixture
+from google.appengine.ext import ndb
+
+class Person(ndb.Model):
+    first_name = ndb.StringProperty()
+    last_name = ndb.StringProperty()
+    born = ndb.DateTimeProperty()
+
+from testable_appengine.loader import load_fixture
 
 from src import main
 
-class SanityTest(unittest.TestCase):
+class LoaderTest(unittest.TestCase):
     def setUp(self):
         self.testbed = testbed.Testbed()
         self.testbed.activate()
         self.testbed.init_datastore_v3_stub()
         self.testbed.init_memcache_stub()
-        load_fixture('file.json')
+        load_fixture('tests/persons.json', Person)
 
     def tearDown(self):
         self.testbed.deactivate()
 
-    def test_sanity(self):
+    def test_loaded(self):
         self.assertTrue(True)
 
-
-class HandlerTest(unittest.TestCase):
-
-    def setUp(self):
-        self.testapp = webtest.TestApp(main.application)
-
-    def test_sample_request(self):
-        response = self.testapp.get('/')
-        self.assertEqual(response.status_int, 200)
-
+# class LoaderNotImplementedTest(unittest.TestCase):
 
 if __name__ == '__main__':
     unittest.main()
