@@ -13,8 +13,11 @@ from google.appengine.api import memcache
 from google.appengine.ext import db
 from google.appengine.ext import testbed
 
-from src import main
-
+try:
+    from src import main
+    TEST_HANDLER = True
+except ImportError:
+    TEST_HANDLER = False
 
 class SanityTest(unittest.TestCase):
 
@@ -30,15 +33,15 @@ class SanityTest(unittest.TestCase):
     def test_sanity(self):
         self.assertTrue(True)
 
+if TEST_HANDLER:
+    class HandlerTest(unittest.TestCase):
 
-class HandlerTest(unittest.TestCase):
+        def setUp(self):
+            self.testapp = webtest.TestApp(main.application)
 
-    def setUp(self):
-        self.testapp = webtest.TestApp(main.application)
-
-    def test_sample_request(self):
-        response = self.testapp.get('/')
-        self.assertEqual(response.status_int, 200)
+        def test_sample_request(self):
+            response = self.testapp.get('/')
+            self.assertEqual(response.status_int, 200)
 
 
 if __name__ == '__main__':
