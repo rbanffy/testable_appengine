@@ -1,0 +1,22 @@
+[
+    {
+        "first_name": "John",
+        "last_name": "Doe",
+        "born": "1968-03-03T00:00:00"
+    },
+    {
+        "first_name": "Jane",
+        "last_name": "Doe",
+        "born": "1970-04-27T00:00:00"
+    },
+    {
+        "first_name": "Alice",
+        "last_name": "Schneier",
+        "born": "1999-09-19T00:00:00"
+    },
+    {
+        "first_name": "Bob",
+        "last_name": "Schneier",
+        "born": "1980-05-25T00:00:00"
+    }
+]
