@@ -1,4 +1,5 @@
 ipdb
 nose
+pyflakes
 wsgiref
 WebTest

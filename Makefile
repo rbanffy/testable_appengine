@@ -36,6 +36,11 @@ pep8:
 	find $(CURDIR)/src/ -name *.py -exec pep8 {} \;
 	find $(CURDIR)/tests/ -name *.py -exec pep8 {} \;
 
+# The same for pyflakes
+pyflakes:
+	find $(CURDIR)/src/ -name *.py -exec pyflakes {} \;
+	find $(CURDIR)/tests/ -name *.py -exec pyflakes {} \;
+
 clean_dirs:
 	rm -rf $(CURDIR)/build/*
 
