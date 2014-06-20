@@ -7,10 +7,18 @@ AppScale environments
 Why?
 ----
 
-Being unable to properly unit-test my App Engine applications has been a
-major annoyance for me and a big turn-off for the platform. With these
-in place, running tests is as trivial as running nose. This tree was
-extracted from a larger project that makes use of it.
+The difficulty of properly testing Python applications written for the
+Google App Engine platform was always a problem to me. I always wanted
+something that would be comfortable to use, "pythonic" and that didn't
+depend on changes to the application you are trying to test, much less
+forcing you to deploy your tests to the production environment. I am
+also very fond of "convention over configuration" and wanted something
+that would make it easy to build upon rather than something that
+requires figuring out documentation written by insanely smart people for
+insanely smart people. With testable_appengine in place, running tests
+is as trivial as running `nosetests` with no additional plugins. This
+tree was extracted from a larger project that makes use of it and
+further evolved on its own, with the enhancements ported back.
 
 Setting up your development environment
 ---------------------------------------
