@@ -21,7 +21,6 @@ try:
 except ImportError:
     TEST_HANDLER = False
 
-
 class SanityTest(unittest.TestCase):
 
     def setUp(self):
@@ -35,7 +34,6 @@ class SanityTest(unittest.TestCase):
 
     def test_sanity(self):
         self.assertTrue(True)
-
 
 if TEST_HANDLER:
     class HandlerTest(unittest.TestCase):
