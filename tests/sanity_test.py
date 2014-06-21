@@ -26,6 +26,7 @@ except ImportError:
 
 
 class Person(ndb.Model):
+    """Our sample class"""
     first_name = ndb.StringProperty()
     last_name = ndb.StringProperty()
     born = ndb.DateTimeProperty()
@@ -49,6 +50,7 @@ class SanityTest(unittest.TestCase):
         self.testbed.deactivate()
 
     def test_sanity(self):
+        """Tests the sanity of the unit testing framework"""
         self.assertTrue(True)
 
 
@@ -59,11 +61,13 @@ if TEST_HANDLER:
             self.testapp = webtest.TestApp(main.application)
 
         def test_sample_request(self):
+            """Test a GET / and check a 200 status"""
             response = self.testapp.get('/')
             self.assertEqual(response.status_int, 200)
 
 
 class LoaderTest(unittest.TestCase):
+    """Tests if we can load a JSON file"""
     def setUp(self):
         self.testbed = testbed.Testbed()
         self.testbed.activate()
@@ -83,6 +87,7 @@ class LoaderTest(unittest.TestCase):
         self.assertTrue(all([type(p) == Person for p in self.loaded_data]))
 
     def test_loaded(self):
+        """Check whether the attributes we imported match the JSON contents"""
         # Test if the first record got in
         person = Person.query(Person.first_name == 'John').get()
         self.assertEqual(person.first_name, 'John')
