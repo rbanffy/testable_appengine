@@ -69,10 +69,18 @@ class LoaderTest(unittest.TestCase):
         self.testbed.activate()
         self.testbed.init_datastore_v3_stub()
         self.testbed.init_memcache_stub()
-        load_fixture('tests/persons.json', Person)
+        self.loaded_data = load_fixture('tests/persons.json', Person)
 
     def tearDown(self):
         self.testbed.deactivate()
+
+    def test_loaded_count(self):
+        """Make sure we got 4 objects from the JSON file"""
+        self.assertEqual(len(self.loaded_data), 4)
+
+    def test_loaded_types(self):
+        """Make sure all objects we loaded are instances of Person"""
+        self.assertTrue(all([type(p) == Person for p in self.loaded_data]))
 
     def test_loaded(self):
         # Test if the first record got in
