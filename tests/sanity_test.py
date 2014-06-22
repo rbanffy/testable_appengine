@@ -11,7 +11,6 @@ import webtest
 
 # The test will error out if we can't import these items
 from google.appengine.api import memcache
-from google.appengine.ext import db
 from google.appengine.ext import ndb
 from google.appengine.ext import testbed
 
@@ -26,6 +25,7 @@ except ImportError:
 
 
 class Person(ndb.Model):
+    """Our sample class"""
     first_name = ndb.StringProperty()
     last_name = ndb.StringProperty()
     born = ndb.DateTimeProperty()
@@ -49,6 +49,10 @@ class SanityTest(unittest.TestCase):
         self.testbed.deactivate()
 
     def test_sanity(self):
+        """
+        Tests the sanity of the unit testing framework and if we can import all
+        we need to work
+        """
         self.assertTrue(True)
 
 
@@ -59,22 +63,51 @@ if TEST_HANDLER:
             self.testapp = webtest.TestApp(main.application)
 
         def test_sample_request(self):
+            """Test a GET / and check a 200 status"""
             response = self.testapp.get('/')
             self.assertEqual(response.status_int, 200)
 
 
-class LoaderTest(unittest.TestCase):
+class MemcacheTest(unittest.TestCase):
+    """Tests if we can use the memcache from the testbed"""
     def setUp(self):
         self.testbed = testbed.Testbed()
         self.testbed.activate()
         self.testbed.init_datastore_v3_stub()
         self.testbed.init_memcache_stub()
-        load_fixture('tests/persons.json', Person)
+        self.loaded_data = load_fixture('tests/persons.json', Person)
 
     def tearDown(self):
         self.testbed.deactivate()
 
+    def test_memcache(self):
+        """Tests memcache"""
+        memcache.set('test_key', 'contents')
+        self.assertEqual(memcache.get('test_key'), 'contents')
+
+
+class LoaderTest(unittest.TestCase):
+    """Tests if we can load a JSON file"""
+    def setUp(self):
+        self.testbed = testbed.Testbed()
+        self.testbed.activate()
+        self.testbed.init_datastore_v3_stub()
+        self.testbed.init_memcache_stub()
+        self.loaded_data = load_fixture('tests/persons.json', Person)
+
+    def tearDown(self):
+        self.testbed.deactivate()
+
+    def test_loaded_count(self):
+        """Make sure we got 4 objects from the JSON file"""
+        self.assertEqual(len(self.loaded_data), 4)
+
+    def test_loaded_types(self):
+        """Make sure all objects we loaded are instances of Person"""
+        self.assertTrue(all([type(p) == Person for p in self.loaded_data]))
+
     def test_loaded(self):
+        """Check whether the attributes we imported match the JSON contents"""
         # Test if the first record got in
         person = Person.query(Person.first_name == 'John').get()
         self.assertEqual(person.first_name, 'John')
