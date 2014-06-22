@@ -68,6 +68,24 @@ if TEST_HANDLER:
             self.assertEqual(response.status_int, 200)
 
 
+class MemcacheTest(unittest.TestCase):
+    """Tests if we can use the memcache from the testbed"""
+    def setUp(self):
+        self.testbed = testbed.Testbed()
+        self.testbed.activate()
+        self.testbed.init_datastore_v3_stub()
+        self.testbed.init_memcache_stub()
+        self.loaded_data = load_fixture('tests/persons.json', Person)
+
+    def tearDown(self):
+        self.testbed.deactivate()
+
+    def test_memcache(self):
+        """Tests memcache"""
+        memcache.set('test_key', 'contents')
+        self.assertEqual(memcache.get('test_key'), 'contents')
+
+
 class LoaderTest(unittest.TestCase):
     """Tests if we can load a JSON file"""
     def setUp(self):
