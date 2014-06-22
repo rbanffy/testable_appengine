@@ -49,7 +49,10 @@ class SanityTest(unittest.TestCase):
         self.testbed.deactivate()
 
     def test_sanity(self):
-        """Tests the sanity of the unit testing framework"""
+        """
+        Tests the sanity of the unit testing framework and if we can import all
+        we need to work
+        """
         self.assertTrue(True)
 
 
