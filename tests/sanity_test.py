@@ -11,7 +11,6 @@ import webtest
 
 # The test will error out if we can't import these items
 from google.appengine.api import memcache
-from google.appengine.ext import db
 from google.appengine.ext import ndb
 from google.appengine.ext import testbed
 
