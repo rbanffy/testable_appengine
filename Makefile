@@ -1,4 +1,4 @@
-version=1.9.8
+version=1.9.10
 
 # Override VENV if not defined
 VENV?=.env
