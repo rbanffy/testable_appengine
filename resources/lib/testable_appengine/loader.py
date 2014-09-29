@@ -27,8 +27,11 @@ def _sensible_value(attribute_type, value):
 
     return retval
 
-def load_fixture(filename, cls):
-    "Loads a file into entities of a given class"
+def load_fixture(filename, cls, post_processor=None):
+    """
+    Loads a file into entities of a given class, run the post_processor on each
+    instance before it's saved
+    """
 
     def _loader(cls=cls):
         "Create a loader for this type"
@@ -40,6 +43,8 @@ def load_fixture(filename, cls):
                 attribute_type = cls.__dict__[attribute_name]
                 attribute_value = _sensible_value(attribute_type, od[attribute_name])
                 obj.__dict__['_values'][attribute_name] = attribute_value
+                if post_processor:
+                    post_processor(obj)
             obj.put()
             return obj
 
