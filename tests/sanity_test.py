@@ -35,6 +35,7 @@ class Person(ndb.Model):
     started_school = ndb.DateProperty()
     sleeptime = ndb.TimeProperty()
     favorite_movies = ndb.JsonProperty()
+    processed = ndb.BooleanProperty(default=False)
 
 
 class SanityTest(unittest.TestCase):
@@ -114,6 +115,7 @@ class LoaderTest(unittest.TestCase):
         self.assertEqual(person.last_name, 'Doe')
         self.assertEqual(person.born, datetime.datetime(1968, 3, 3))
         self.assertEqual(person.thermostat_set_to, 18.34)
+        self.assertFalse(person.processed)
 
         # Test for the third one
         person = Person.query(Person.last_name == 'Schneier' and
@@ -122,6 +124,7 @@ class LoaderTest(unittest.TestCase):
         self.assertEqual(person.last_name, 'Schneier')
         self.assertEqual(person.born, datetime.datetime(1999, 9, 19))
         self.assertTrue(person.snores)
+        self.assertFalse(person.processed)
 
         # Test for the last one
         person = Person.query(
@@ -129,6 +132,36 @@ class LoaderTest(unittest.TestCase):
         self.assertEqual(person.first_name, 'Bob')
         self.assertEqual(person.last_name, 'Schneier')
         self.assertEqual(person.born, datetime.datetime(1980, 5, 25))
+        self.assertFalse(person.processed)
+
+
+class ProcessedLoaderTest(unittest.TestCase):
+    """Tests if we can load a JSON file and post-process it"""
+    def setUp(self):
+
+        def process(p):
+            p.processed = True
+
+        self.testbed = testbed.Testbed()
+        self.testbed.activate()
+        self.testbed.init_datastore_v3_stub()
+        self.testbed.init_memcache_stub()
+        self.loaded_data = load_fixture(
+            'tests/persons.json',
+            Person,
+            post_processor = process
+        )
+
+    def tearDown(self):
+        self.testbed.deactivate()
+
+    def test_loaded_count(self):
+        """Make sure we got 4 objects from the JSON file"""
+        self.assertEqual(len(self.loaded_data), 4)
+
+    def test_loaded_types(self):
+        """Make sure all objects we loaded were processed"""
+        self.assertTrue(all([p.processed for p in self.loaded_data]))
 
 
 if __name__ == '__main__':
