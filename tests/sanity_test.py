@@ -149,7 +149,7 @@ class ProcessedLoaderTest(unittest.TestCase):
         self.loaded_data = load_fixture(
             'tests/persons.json',
             Person,
-            post_processor = process
+            post_processor=process
         )
 
     def tearDown(self):
