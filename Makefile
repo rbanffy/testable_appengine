@@ -11,7 +11,7 @@ directories:
 	mkdir -p $(CURDIR)/build $(CURDIR)/cache
 
 appenginesdk: directories
-	wget -c http://commondatastorage.googleapis.com/appengine-sdks/featured/google_appengine_$(version).zip -O $(CURDIR)/cache/google_appengine_$(version).zip
+	wget -c https://storage.googleapis.com/appengine-sdks/featured/google_appengine_$(version).zip -O $(CURDIR)/cache/google_appengine_$(version).zip
 	unzip -q -o $(CURDIR)/cache/google_appengine_$(version).zip -d $(CURDIR)/build
 
 requirements:
