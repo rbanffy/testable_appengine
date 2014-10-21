@@ -49,3 +49,6 @@ clean_cache:
 # Deletes the virtualenv
 clean_venv: clean_dirs
 	rm -rf $(CURDIR)/$(VENV)
+
+test: venv
+	.env/bin/nosetests
