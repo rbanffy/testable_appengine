@@ -3,3 +3,4 @@ nose
 pyflakes
 wsgiref
 WebTest
+Appengine-Fixture-Loader

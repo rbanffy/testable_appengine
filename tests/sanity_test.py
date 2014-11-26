@@ -14,7 +14,7 @@ from google.appengine.api import memcache
 from google.appengine.ext import ndb
 from google.appengine.ext import testbed
 
-from testable_appengine.loader import load_fixture
+from appengine_fixture_loader.loader import load_fixture
 
 # If your project has a src/main.py file, it'll check if it imports
 try:
