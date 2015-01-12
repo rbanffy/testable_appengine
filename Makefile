@@ -1,4 +1,5 @@
-version=1.9.15
+#version=1.9.15
+version=$(shell ./get_current_sdk_version.sh)
 
 # Override VENV if not defined
 VENV?=.env
