@@ -16,9 +16,10 @@ also very fond of "convention over configuration" and wanted something
 that would make it easy to build upon rather than something that
 requires figuring out documentation written by insanely smart people for
 insanely smart people. With testable_appengine in place, running tests
-is as trivial as running `nosetests` with no additional plugins. This
-tree was extracted from a larger project that makes use of it and
-further evolved on its own, with the enhancements ported back.
+is as trivial as running `nosetests` with no additional plugins and no
+tweaks to your test programs. This tree was extracted from a larger
+project that makes use of it and further evolved on its own, with the
+enhancements ported back.
 
 ![nosetests running]
 (https://raw.github.com/wiki/rbanffy/testable_appengine/screenshot.png)
@@ -33,6 +34,10 @@ requirements from the `resources/requirements.txt` file. If you wish to
 use a Python environment you provide yourself, you can make the
 virtualenv youself and run `make libraries` with VENV pointing to your
 virtualenv (as in `VENV=.my_env make libraries`)
+
+The actual makefile is under resources. Your own makefile (with your own
+targets) should include it and extend it like the included Makefile
+does.
 
 Please check the makefile before using it. It may not make sense for
 your environment. It was tested on Ubuntu, Fedora, OSX (10.7+,
