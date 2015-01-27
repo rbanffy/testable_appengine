@@ -50,5 +50,5 @@ clean_cache:
 clean_venv: clean_dirs
 	rm -rf $(CURDIR)/$(VENV)
 
-test: venv
+travis: venv
 	.env/bin/nosetests
