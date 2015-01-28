@@ -22,7 +22,7 @@ project that makes use of it and further evolved on its own, with the
 enhancements ported back.
 
 ![nosetests running]
-(https://raw.github.com/wiki/rbanffy/testable_appengine/screenshot.png)
+(https://raw.githubusercontent.com/wiki/rbanffy/testable_appengine/screenshot.png)
 
 Setting up your development environment
 ---------------------------------------
@@ -47,7 +47,7 @@ Windows and don't use Cygwin, you are suffering more than you need for
 no good reason.
 
 ![Under Windows+Cygwin]
-(https://raw.github.com/wiki/rbanffy/testable_appengine/windows.png)
+(https://raw.githubusercontent.com/wiki/rbanffy/testable_appengine/windows.png)
 
 When done, you can activate your virtualenv with the usual `source
 .env/bin/activate` or your favorite virtualenv tool. The tests will not
@@ -77,7 +77,7 @@ you just need to delete a character. You can also easily use iPython to
 explore your ideas before you commit them to code.
 
 ![ipython prompt and ipdb in a test]
-(https://raw.github.com/wiki/rbanffy/testable_appengine/using_ipdb.png)
+(https://raw.githubusercontent.com/wiki/rbanffy/testable_appengine/using_ipdb.png)
 
 Contributing
 ------------
