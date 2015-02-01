@@ -3,6 +3,14 @@ version=$(shell resources/get_current_sdk_version.sh)
 # Override VENV if not defined
 VENV?=.env
 
+help:
+	@echo "Please use \`make <target>' where <target> is one of"
+	@echo "  venv       to build the working virtual environment, and to install requirements for deployment"
+	@echo "  pep8       to run pep8 on the src and tests folders"
+	@echo "  pyflakes   to run pyflakes on the src and tests folders"
+	@echo "  clean_venv to remove the created virtualenv folder"
+	@echo "  travis	    runs all tests (Travis CI hook)"
+
 # Consciously avoiding "all" target because we may want to use it for building
 # the actual product rather than a sane testing environment
 venv: virtualenv libraries
