@@ -39,6 +39,8 @@ class Person(ndb.Model):
 
 
 class SanityTest(unittest.TestCase):
+    """A simple sanity test. Everything here should past if the environment was
+    properly set up."""
 
     def setUp(self):
         self.testbed = testbed.Testbed()
@@ -59,6 +61,8 @@ class SanityTest(unittest.TestCase):
 
 if TEST_HANDLER:
     class HandlerTest(unittest.TestCase):
+        """This test only triggers if we are testing for the sample
+        application, not your own."""
 
         def setUp(self):
             self.testapp = webtest.TestApp(main.application)
@@ -71,6 +75,7 @@ if TEST_HANDLER:
 
 class MemcacheTest(unittest.TestCase):
     """Tests if we can use the memcache from the testbed"""
+
     def setUp(self):
         self.testbed = testbed.Testbed()
         self.testbed.activate()
