@@ -79,10 +79,6 @@ explore your ideas before you commit them to code.
 ![ipython prompt and ipdb in a test]
 (https://raw.githubusercontent.com/wiki/rbanffy/testable_appengine/using_ipdb.png)
 
-[![Coverage Status]
-(https://coveralls.io/repos/rbanffy/testable_appengine/badge.png?branch=master&service=github)]
-(https://coveralls.io/github/rbanffy/testable_appengine?branch=master)
-
 Contributing
 ------------
 
@@ -91,3 +87,7 @@ it, test it, and, if it works, send a pull request. When in doubt, get
 in touch. We'll figure out what needs to be done.
 
 ![This app is proudly checked with Travis](https://api.travis-ci.org/rbanffy/testable_appengine.svg)
+
+[![Coverage Status]
+(https://coveralls.io/repos/rbanffy/testable_appengine/badge.png?branch=master&service=github)]
+(https://coveralls.io/github/rbanffy/testable_appengine?branch=master)
