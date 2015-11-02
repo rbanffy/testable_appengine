@@ -87,7 +87,3 @@ it, test it, and, if it works, send a pull request. When in doubt, get
 in touch. We'll figure out what needs to be done.
 
 ![This app is proudly checked with Travis](https://api.travis-ci.org/rbanffy/testable_appengine.svg)
-
-[![Coverage Status]
-(https://coveralls.io/repos/rbanffy/testable_appengine/badge.png?branch=develop&service=github)]
-(https://coveralls.io/github/rbanffy/testable_appengine?branch=develop)
