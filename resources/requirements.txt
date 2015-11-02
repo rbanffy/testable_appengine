@@ -3,4 +3,5 @@ nose
 pyflakes
 wsgiref
 WebTest
+python-coveralls
 Appengine-Fixture-Loader
