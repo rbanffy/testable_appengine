@@ -24,7 +24,7 @@ virtualenv:
 
 # Install all modules that will be used during development.
 requirements:
-	$(CURDIR)/$(VENV)/bin/pip install --download-cache $(CURDIR)/cache -r $(CURDIR)/resources/requirements.txt
+	$(CURDIR)/$(VENV)/bin/pip install --cache-dir $(CURDIR)/cache -r $(CURDIR)/resources/requirements.txt
 
 # Download the current Appengine SDK, unpack it in the virtualenv's
 # lib directory and add it and its patches to the gae.pth file that'll

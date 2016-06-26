@@ -1,5 +1,6 @@
 ipdb
 nose
+rednose
 pyflakes
 wsgiref
 WebTest
