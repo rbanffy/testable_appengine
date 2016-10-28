@@ -1,0 +1,25 @@
+runtime: python27
+api_version: 1
+threadsafe: yes
+
+handlers:
+- url: /.*
+  script: main.application
+
+libraries:
+- name: jinja2
+  version: latest
+
+skip_files:
+- ^(.*/)?#.*#$
+- ^(.*/)?.*~$
+- ^(.*/)?.*\.py[co]$
+- ^(.*/)?.*/RCS/.*$
+- ^(.*/)?\..*$
+- Makefile
+- build
+- resources
+- cache
+- tests
+- LICENSE
+- README.md
