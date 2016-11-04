@@ -2,7 +2,9 @@
 ipdb
 nose
 rednose
+pudb
+pytest
 pyflakes
 wsgiref
 WebTest
-Appengine-Fixture-Loader
+appengine-fixture-loader
