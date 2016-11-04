@@ -94,8 +94,9 @@ Debugging
 Debugging works like you'd expect. You just use pdb, ipdb or pudb (ipdb
 and pudb seem to have a tendency not to work under the dev_appserver,
 but pdb is just fine). Rule is, use ipbd or pudb if you want to debug
-something that's called by a test, pdb for a live web application. Worst
-case scenario is that you just need to edit a little more. You can also
+something that's called by a test (run something like `pudb
+.env/bin/nosetests`), pdb for a live web application. Worst case
+scenario is that you just need to edit a little more. You can also
 easily use iPython to explore your ideas before you commit them to code.
 
 ![ipython prompt and ipdb in a test]
