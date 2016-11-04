@@ -63,12 +63,16 @@ does.
 Please check the makefile before using it, as it may not make sense for
 your environment. It was tested on Ubuntu, Fedora, OSX (10.7+, provided
 you have functional pip and virtualenv utilities) and Windows 8.1 under
-[Cygwin](http://www.cygwin.com/). If you are developing under Windows
-and don't use Cygwin or the Windows Subsystem for Linux, you are
-suffering more than you need for no good reason.
+[Cygwin](http://www.cygwin.com/) and Windows 10 under Ubuntu on
+Windows. If you are developing under Windows and don't use Cygwin or the
+Windows Subsystem for Linux, you are suffering more than you need for no
+good reason.
 
 ![Under Windows+Cygwin]
 (https://raw.githubusercontent.com/wiki/rbanffy/testable_appengine/windows.png)
+
+![Under Ubuntu on Windows]
+(https://raw.githubusercontent.com/wiki/rbanffy/testable_appengine/ubuntu_on_windows.png)
 
 When done, you can activate your virtualenv with the usual `source
 .env/bin/activate` or your favorite virtualenv tool. The tests will not
