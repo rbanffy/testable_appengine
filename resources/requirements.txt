@@ -1,10 +1,9 @@
 -r ../requirements.txt
+appengine-fixture-loader
+flake8
 ipdb
 nose
-rednose
 pudb
 pytest
-pyflakes
-wsgiref
-WebTest
-appengine-fixture-loader
+rednose
+webtest
