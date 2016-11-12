@@ -4,6 +4,9 @@ testable_appengine
 A testable Python skeleton application for Google App Engine and
 AppScale environments.
 
+![Demo]
+(https://raw.githubusercontent.com/wiki/rbanffy/testable_appengine/screencap.gif)
+
 Why?
 ----
 
