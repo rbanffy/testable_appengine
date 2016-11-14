@@ -42,7 +42,7 @@ requirements3:
 # Download the current Appengine SDK, unpack it in the virtualenv's
 # lib directory and add it and its patches to the gae.pth file that'll
 # set up the virtualenv's path.
-appenginesdk: virtualenv directories
+appenginesdk: virtualenv2 directories
 	@wget -c https://storage.googleapis.com/appengine-sdks/featured/google_appengine_$(VERSION).zip -O $(CURDIR)/cache/google_appengine_$(VERSION).zip
 	@unzip -q -o $(CURDIR)/cache/google_appengine_$(VERSION).zip -d $(CURDIR)/$(VENV)/lib
 	@ln -svf $(CURDIR)/$(VENV)/lib/google_appengine/*.py $(CURDIR)/$(VENV)/bin/
