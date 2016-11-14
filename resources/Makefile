@@ -64,4 +64,4 @@ clean_venv: clean_dirs
 	rm -rf $(CURDIR)/$(VENV)
 
 travis: venv
-	.env/bin/nosetests
+	.env/bin/nosetests src
