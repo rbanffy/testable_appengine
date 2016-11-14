@@ -34,10 +34,11 @@ virtualenv3:
 requirements2:
 	$(CURDIR)/$(VENV)/bin/pip install --cache-dir $(CURDIR)/cache -r $(CURDIR)/resources/requirements.txt
 
-# Install all modules that will be used during development.
+# Install all modules that will be used during development - ignore
+# cache because Travis doesn't seem to like it.
 requirements3:
-	$(CURDIR)/$(VENV3)/bin/pip install --cache-dir $(CURDIR)/cache -r $(CURDIR)/resources/requirements3.txt
-	$(CURDIR)/$(VENV3)/bin/pip install --cache-dir $(CURDIR)/cache -r $(CURDIR)/flexible_src/requirements.txt
+	$(CURDIR)/$(VENV3)/bin/pip install -r $(CURDIR)/resources/requirements3.txt
+	$(CURDIR)/$(VENV3)/bin/pip install -r $(CURDIR)/flexible_src/requirements.txt
 
 # Download the current Appengine SDK, unpack it in the virtualenv's
 # lib directory and add it and its patches to the gae.pth file that'll
