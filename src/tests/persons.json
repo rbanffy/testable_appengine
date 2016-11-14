@@ -1,0 +1,58 @@
+[
+    {
+        "born": "1968-03-03T00:00:00",
+        "first_name": "John",
+        "last_name": "Doe",
+        "favorite_movies": [
+            "2001",
+            "The Day The Earth Stood Still (1951)"
+        ],
+        "snores": false,
+        "sleeptime": "23:00",
+        "started_school": "1974-02-15",
+        "thermostat_set_to": 18.34,
+        "userid": 1
+    },
+    {
+        "born": "1970-04-27T00:00:00",
+        "first_name": "Jane",
+        "last_name": "Doe",
+        "favorite_movies": [
+            "2001",
+            "Superman"
+        ],
+        "snores": false,
+        "sleeptime": "22:30:30",
+        "started_school": "1978-08-01",
+        "thermostat_set_to": 23,
+        "userid": 2
+    },
+    {
+        "born": "1999-09-19T00:00:00",
+        "first_name": "Alice",
+        "last_name": "Schneier",
+        "favorite_movies": [
+            "2001",
+            "Superman"
+        ],
+        "snores": true,
+        "sleeptime": "22:00",
+        "started_school": "1985-08-01",
+        "thermostat_set_to": 18.34,
+        "userid": 3
+    },
+    {
+        "born": "1980-05-25T00:00:00",
+        "first_name": "Bob",
+        "last_name": "Schneier",
+        "favorite_movies": [
+            "2001",
+            "Superman"
+        ],
+        "snores": true,
+        "sleeptime": "22:00",
+        "started_school": "1985-08-01",
+        "thermostat_set_to": 18.34,
+        "userid": -5
+    }
+]
