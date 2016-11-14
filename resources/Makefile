@@ -28,7 +28,7 @@ virtualenv2:
 
 # Creates the virtualenv for the Flexible runtime with Python 3
 virtualenv3:
-	virtualenv $(CURDIR)/$(VENV3)
+	pyvenv $(CURDIR)/$(VENV3)
 
 # Install all modules that will be used during development.
 requirements2:
