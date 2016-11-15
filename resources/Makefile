@@ -28,7 +28,7 @@ virtualenv_std:
 
 # Creates the virtualenv for the Flexible runtime with Python 3
 virtualenv_flex:
-	pyvenv $(CURDIR)/$(VENV_FLEX)
+	virtualenv $(CURDIR)/$(VENV_FLEX)
 
 # Install all modules that will be used during development.
 requirements_std:
