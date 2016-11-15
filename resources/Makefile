@@ -37,7 +37,7 @@ requirements_std:
 # Install all modules that will be used during development - ignore
 # cache because Travis doesn't seem to like it.
 requirements_flex:
-	$(CURDIR)/$(VENV_FLEX)/bin/pip install -r $(CURDIR)/resources/requirements3.txt
+	$(CURDIR)/$(VENV_FLEX)/bin/pip install -r $(CURDIR)/resources/requirements_flex.txt
 	$(CURDIR)/$(VENV_FLEX)/bin/pip install -r $(CURDIR)/flexible_src/requirements.txt
 
 # Download the current Appengine SDK, unpack it in the virtualenv's
