@@ -6,6 +6,6 @@ addons:
     packages:
     - gnulib
     - python-dev
-    - python3-dev
+    # - python3-dev
 # command to run tests
 script: "make travis travis_flex"
