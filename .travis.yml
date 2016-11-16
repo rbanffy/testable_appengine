@@ -4,6 +4,7 @@ python:
 addons:
   apt:
     packages:
+    - gnulib
     - python-dev
     - python3-dev
 # command to run tests
