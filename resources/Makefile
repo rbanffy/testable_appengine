@@ -7,6 +7,7 @@ VENV_FLEX?=.env_flex
 
 help:
 	@echo "Please use \`make <target>' where <target> is one of"
+	@echo "  setup       to setup the virtualenv and git hook."
 	@echo "  venv        to build the working virtual environment for the"
 	@echo "              standard environment application, and to install"
 	@echo "              requirements for deployment."
@@ -22,6 +23,10 @@ help:
 
 # Consciously avoiding "all" target because we may want to use it for building
 # the actual product rather than a sane testing environment.
+setup: venv
+	ln ./resources/dot-git-hooks-pre-commit .git/hooks/pre-commit
+	chmod +x .git/hooks/pre-commit
+
 venv: virtualenv_std requirements_std appenginesdk
 
 venv_flex: virtualenv_flex requirements_flex
