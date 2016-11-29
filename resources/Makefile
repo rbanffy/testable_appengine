@@ -13,7 +13,7 @@ help:
 	@echo "  venv_flex   to build the working virtual environment for the"
 	@echo "              flexible environment application, and to install"
 	@echo "              requirements for deployment."
-	@echo "  pep8        to run pep8 on the code and tests folders."
+	@echo "  pycodestyle to run pycodestyle on the code and tests folders."
 	@echo "  pyflakes    to run pyflakes on the code and tests folders."
 	@echo "  clean_venv  to remove the created virtualenv folders."
 	@echo "  clean_cache to remove the downloaded files/pip cache folder."
@@ -61,8 +61,8 @@ appenginesdk: virtualenv_std directories
 directories:
 	mkdir -p $(CURDIR)/build $(CURDIR)/cache
 
-# A useful target for PEP-8'ing your source tree. Do a pep8 for everything under `src` and `tests`.
-pep8:
+# A useful target for running pycodestyle your source tree. Do a pep8 for everything under `src` and `tests`.
+pycodestyle:
 	find $(CURDIR)/src/ -name *.py -exec $(CURDIR)/$(VENV)/bin/pycodestyle {} \;
 	find $(CURDIR)/src/tests/ -name *.py -exec $(CURDIR)/$(VENV)/bin/pycodestyle {} \;
 
